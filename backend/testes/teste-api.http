@@ -1,0 +1,15 @@
+### LISTAR PRODUTOS (GET)
+GET http://localhost:3001/api/produtos
+
+### CADASTRAR PRODUTO (POST)
+POST http://localhost:3001/api/produtos
+Content-Type: application/json
+
+{
+  "nome": "Teclado Mecânico",
+  "categoria": "Periféricos",
+  "cod_barras": "123456789",
+  "unidade": "un",
+  "estoque_min": 2,
+  "estoque_atual": 10
+}
