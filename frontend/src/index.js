@@ -11,3 +11,5 @@ root.render(
 );
 
 
+/* Importei o React, ReactDOM e o App, que formam o ponto de entrada da aplicação.
+O ReactDOM.createRoot é usado para renderizar o componente App dentro do elemento com id 'root' no HTML.*/

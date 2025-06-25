@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* Aqui farei uma uma explicação mais agrupadado CSS 
+.App centraliza qualquer texto que tiver dentro de uma <div className="App">
+.App-logo define o tamanho do logo e não deixa que ele seja clicável.
+.App-header estiliza o cabeçalho principal da página, definindo a cor de fundo, altura mínima, alinhamento e tamanho da fonte.
+.App-link estiliza os links dentro da aplicação, definindo a cor.
+
+@media e @keyframes são usados para adicionar animações e estilos responsivos, porem, não foram utilizados neste projeto, pois preferi deixar com uma estética mais clean, deixei no código pois eera a ideia inicial.
+
+*/

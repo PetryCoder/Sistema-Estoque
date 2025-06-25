@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+// React é a biblioteca principal para contruir a interface.
+// Axios é a biblioteca que usei para fazer as requisições HTTP ao backend.
 
 function FormCadastro({ onProdutoCadastrado }) {
   const [form, setForm] = useState({
@@ -10,11 +12,14 @@ function FormCadastro({ onProdutoCadastrado }) {
     estoque_min: '',
     estoque_atual: ''
   });
+//Função FormCadastro é que representa o formulário de cadastro de produtos
+
 
   function handleChange(e) {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   }
+// Função handleChange é quem atualiza o formulário quando nós digitamos nos campos
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -37,6 +42,12 @@ function FormCadastro({ onProdutoCadastrado }) {
       })
       .catch(error => alert('Erro ao cadastrar produto.'));
   }
+/* 
+O e.preventDefault() previne que a página seja recarregada ao enviar o formulário. Para uma melhor experiência.
+A requisição POST (axios.post) é feita para o backend, onde enviamos os dados do formulário.
+.then(response => {...}) é a função que será executada quando a o cadastro do produto der certo.
+onProdutoCadastrado(); é a função que atualiza a lista para mostrar o produto que foi cadastrado
+*/
 
   return (
     <form onSubmit={handleSubmit}>
@@ -53,3 +64,6 @@ function FormCadastro({ onProdutoCadastrado }) {
 }
 
 export default FormCadastro;
+
+// A tag <form> é usada para criar o formulário.
+// A tag <input> é usada para criar os campos do formulário.

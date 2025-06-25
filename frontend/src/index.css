@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* Body define a margem da pagina como 0 (ou seja, não tem margem), define a fonte da aplicação
+O code define a fonte para o texto que estiver dentro da tag <code>  */
+

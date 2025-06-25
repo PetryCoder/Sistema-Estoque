@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
+//Importamos novamente React e axios, além do Bootstrap para o estilo
 
 function App() {
   const [logado, setLogado] = useState(false);
@@ -22,10 +23,12 @@ function App() {
       .then((res) => setProdutos(res.data))
       .catch((err) => console.error("Erro ao carregar produtos:", err));
   };
+  //Acima criei a const [logado, setLogado] = useState(false); que cria uma tela de login falsa (falsa, para facilitar o teste) mas é possível fazer uma tela de login real com autenticação.)
 
   useEffect(() => {
     if (logado) carregarProdutos();
   }, [logado]);
+// quando logado for verdade, funcáo carregarProdutos() é chamada para buscar os produtos do backend.
 
   const produtosFiltrados = produtos.filter((p) => {
     const textoBusca = busca.toLowerCase();
@@ -36,11 +39,13 @@ function App() {
       p.estoque_min.toString().includes(textoBusca)
     );
   });
+//const produtosFiltrados filtra os produtos com base no digitado na busca.
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((old) => ({ ...old, [name]: value }));
   };
+// // Função handleChange atualiza o formulário com o que o usuário digitou.
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -98,12 +103,14 @@ function App() {
         console.error(err);
       });
   };
+// o axios.delete é usado para excluir o produto selecionado, e a lista de produtos é atualizada após a exclusão.
 
   const iniciarEdicao = (produto) => {
     setForm(produto);
     setModoEdicao(true);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+// A função iniciarEdicao preenche o formulário com os dados do produto que foi selecionado para ser editado.
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -261,3 +268,6 @@ function App() {
 }
 
 export default App;
+
+
+// Os DIVs, FORM, INPUTS e BUTTONS foram estilizados com classes do Bootstrap para melhorar a aparência da página.

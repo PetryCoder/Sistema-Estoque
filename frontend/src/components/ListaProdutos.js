@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+//Novamente aqui importamos React e axios
 
 function ListaProdutos() {
   const [produtos, setProdutos] = useState([]);
@@ -9,6 +10,8 @@ function ListaProdutos() {
       .then(response => setProdutos(response.data))
       .catch(error => console.error('Erro ao buscar produtos:', error));
   }, []);
+
+// Acima usamos o useEffect para buscar a lista de produtos do backend.
 
   return (
     <div>
@@ -38,3 +41,7 @@ function ListaProdutos() {
 }
 
 export default ListaProdutos;
+
+// Acima mostamos a tabela dos produtos, <table border="1" cellPadding="5"> cria a tabela com bordas
+// O produtos.map(p => (...) é usado para criar uma linha para cada produto.
+// O export torna o conteúdo do arquivo acessível para outros arquivos.
