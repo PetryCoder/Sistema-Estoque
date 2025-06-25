@@ -1,12 +1,13 @@
 const conexao = require('../banco/conexao');
+// no const acima importei a conexão com o banco de dados 'criado no arquivo conexao.js'.
 
-// Listar todos os produtos
 async function listarProdutos() {
   const { rows } = await conexao.query('SELECT * FROM produtos ORDER BY id');
   return rows;
 }
+// Na função acima vou listar todos os produtos, ordenados por ID para manter uma organização melhor.
 
-// Cadastrar novo produto (sem 'unidade')
+
 async function cadastrarProduto(produto) {
   const { nome, categoria, cod_barras, estoque_min, estoque_atual } = produto;
 
@@ -18,14 +19,15 @@ async function cadastrarProduto(produto) {
 
   return rows[0];
 }
+// A função CadastrarProduto recebe as informaçãoes do produto novo e insere no banco de dados, retornando o produto já cadastrado
 
-// Excluir produto pelo ID
+
 async function excluirProduto(id) {
   console.log('Executando DELETE para ID:', id);
   await conexao.query('DELETE FROM produtos WHERE id = $1', [id]);
 }
+// Aqui acima temos a função excluirProduto, que recebe o ID do produto e o exclui do banco de dados, retornando um console.log para confirmar que foi excluido.
 
-// Atualizar produto pelo ID (sem 'unidade')
 async function atualizarProduto(id, produto) {
   const { nome, categoria, cod_barras, estoque_min, estoque_atual } = produto;
 
@@ -43,6 +45,7 @@ async function atualizarProduto(id, produto) {
 
   return rows[0];
 }
+// Função atualizarProduto recebe o ID do produto e as novas informações, atualizando o produto no banco de dados e retornando o produto atualizado.
 
 module.exports = {
   listarProdutos,
@@ -50,3 +53,4 @@ module.exports = {
   excluirProduto,
   atualizarProduto,
 };
+//Aqui novamente exporto as funções criadas para que elas sejam acessíveis em outros arquivos.

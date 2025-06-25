@@ -13,3 +13,5 @@ Content-Type: application/json
   "estoque_min": 2,
   "estoque_atual": 10
 }
+
+// aqui fiz somente um teste para cadastrar um prduto e ele ser exibido na listagem.
