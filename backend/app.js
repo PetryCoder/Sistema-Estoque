@@ -7,11 +7,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Importa e usa as rotas
+//  A baixo eu importei e useis as rotas
 const produtoRotas = require('./rotas/produtoRotas');
 app.use('/api/produtos', produtoRotas);
 
-// Rota simples para testar se o servidor está vivo
+// Teste se o servidor está vivo
 app.get('/', (req, res) => {
   res.send('API do sistema de estoque está funcionando!');
 });
